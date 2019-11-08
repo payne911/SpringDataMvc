@@ -1,17 +1,15 @@
 package springTest.controller;
 
-import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import springTest.HibernateUtil;
-import springTest.model.Person;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import springTest.model.Person;
 import springTest.service.PersonService;
 
 
@@ -63,10 +61,7 @@ public class MyController {
     @RequestMapping("/add4")
     @ResponseBody
     public Person add4(@ModelAttribute Person person) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        personService.createPerson(session, person.getEmail(), person.getFirstName(), person.getLastName());
-        session.close();
-        return person;
+        return personService.createPerson(person);
     }
 
 

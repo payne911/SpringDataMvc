@@ -13,54 +13,6 @@
   <body>
   <p>Such beauty!</p>
 
-  <form action="add1" method="get">
-    <label>
-      Email:
-      <input type="email" name="email" required/>
-    </label>
-    <br/>
-
-    <label>
-      First name:
-      <input type="text" name="firstName" required/>
-    </label>
-    <br/>
-
-    <label>
-      Last name:
-      <input type="text" name="lastName" required/>
-    </label>
-    <br/>
-
-    <label>
-      <input type="submit" id="submit" value="Send (@RequestParam)"/>
-    </label>
-  </form>
-
-  <form action="add2" method="get">
-    <label>
-      Email:
-      <input type="email" name="email" required/>
-    </label>
-    <br/>
-
-    <label>
-      First name:
-      <input type="text" name="firstName" required/>
-    </label>
-    <br/>
-
-    <label>
-      Last name:
-      <input type="text" name="lastName" required/>
-    </label>
-    <br/>
-
-    <label>
-      <input type="submit" id="submit2" value="Send (@ModelAttribute)"/>
-    </label>
-  </form>
-
   <form action="add3" method="get">
     <label>
       Email:
@@ -81,7 +33,7 @@
     <br/>
 
     <label>
-      <input type="submit" id="submit3" value="Send (@BodyRequest) via REST"/>
+      <input type="submit" id="submit3" value="Send(connected to DB)"/>
     </label>
   </form>
 
@@ -105,7 +57,55 @@
     <br/>
 
     <label>
-      <input type="submit" id="submit4" value="Send (only one actually connected to DB)"/>
+      <input type="submit" id="submit4" value="Send (connected to DB)"/>
+    </label>
+  </form>
+
+  <form action="add1" method="get">
+    <label>
+      Email:
+      <input type="email" name="email" required/>
+    </label>
+    <br/>
+
+    <label>
+      First name:
+      <input type="text" name="firstName" required/>
+    </label>
+    <br/>
+
+    <label>
+      Last name:
+      <input type="text" name="lastName" required/>
+    </label>
+    <br/>
+
+    <label>
+      <input type="submit" id="submit" value="Test (@RequestParam)"/>
+    </label>
+  </form>
+
+  <form action="add2" method="get">
+    <label>
+      Email:
+      <input type="email" name="email" required/>
+    </label>
+    <br/>
+
+    <label>
+      First name:
+      <input type="text" name="firstName" required/>
+    </label>
+    <br/>
+
+    <label>
+      Last name:
+      <input type="text" name="lastName" required/>
+    </label>
+    <br/>
+
+    <label>
+      <input type="submit" id="submit2" value="Test (@ModelAttribute)"/>
     </label>
   </form>
 

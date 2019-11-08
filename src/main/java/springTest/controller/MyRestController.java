@@ -1,13 +1,14 @@
 package springTest.controller;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import springTest.model.Person;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import springTest.model.Person;
 import springTest.service.PersonService;
 
 
@@ -19,6 +20,12 @@ public class MyRestController {
     PersonService personService;
 
     // todo: @ExceptionHandler
+
+    @RequestMapping("/check/{contain}")
+    public List<Person> getPersonsContaining(@PathVariable String contain) {
+        System.out.println("CONTAINS ?");
+        return personService.getPersonsContaining(contain);
+    }
 
     @GetMapping("/remove")
     public Person remove(@RequestParam(value="email") String email) {
@@ -39,6 +46,6 @@ public class MyRestController {
     @RequestMapping("/add")
     public Person addByForm(@ModelAttribute("person") Person person) {
         System.out.println(person);
-        return person;
+        return personService.addPerson(person);
     }
 }
