@@ -37,7 +37,7 @@ public class AppConfig {
         return viewResolver;
     }
 
-    // For Spring-Data (data-source elements of `hibernate.properties`)
+    // Data-source elements of `hibernate.properties`
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -64,7 +64,7 @@ public class AppConfig {
         return em.getObject();
     }
 
-    // For Spring-Data
+    // For Spring-Data ?
     @Bean
     public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
         JpaTransactionManager transactionManager = new JpaTransactionManager();
@@ -73,13 +73,13 @@ public class AppConfig {
         return transactionManager;
     }
 
-    // For Spring-Data
+    // For Spring-Data ?
     @Bean
     public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
         return new PersistenceExceptionTranslationPostProcessor();
     }
 
-    // For Spring-Data (most of `hibernate.properties` elements)
+    // Most of `hibernate.properties` elements
     Properties additionalProperties() {
         Properties properties = new Properties();
         properties.put("hibernate.hbm2ddl.auto", "create-drop");
